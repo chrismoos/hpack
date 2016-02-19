@@ -19,7 +19,7 @@ Most users of this library will be implementing HTTP/2.
     headerBlock := recvHeaderBlockAndContinuations()
     headers, err := decoder.Decode(headerBlock)
 
-The `ParseHeaderBlock` function expects a complete header block. HTTP/2 specifies that a header block can be split across multiple frames, in a **HEADER** or **PUSH_PROMISE** frame plus optional **CONTINUATION** frames.
+The `Decode` function expects a complete header block. HTTP/2 specifies that a header block can be split across multiple frames, in a **HEADER** or **PUSH_PROMISE** frame plus optional **CONTINUATION** frames.
 
 Users should concatenate the header block fragments together and only call `ParseHeadersBlock` when a frame with the **END_HEADERS** flag is received.
 
