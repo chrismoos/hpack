@@ -1,5 +1,7 @@
 # HPACK library
 
+[![Build Status](https://travis-ci.org/chrismoos/hpack.svg?branch=master)](https://travis-ci.org/chrismoos/hpack)
+
 This library implements [RFC7541](https://tools.ietf.org/html/rfc7541), **HPACK: Header Compression for HTTP/2**, which includes:
 
 * Primitive Type Representations
