@@ -15,7 +15,7 @@ Most users of this library will be implementing HTTP/2.
 
     decoder := hpack.NewDecoder(negotiatedDynamicTableSizeMax)
     headerBlock := recvHeaderBlockAndContinuations()
-    headers, err := decoder.ParseHeaderBlock(headerBlock)
+    headers, err := decoder.Decode(headerBlock)
 
 The `ParseHeaderBlock` function expects a complete header block. HTTP/2 specifies that a header block can be split across multiple frames, in a **HEADER** or **PUSH_PROMISE** frame plus optional **CONTINUATION** frames.
 
