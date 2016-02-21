@@ -11,6 +11,8 @@ This library implements [RFC7541](https://tools.ietf.org/html/rfc7541), **HPACK:
 * Dynamic Table evictions
 * Header block parsing
 
+You can read about HPACK and this implementation [here](https://www.chrismoos.com/2016/02/19/hpack-compression-golang/).
+
 ## Usage
 
 Most users of this library will be implementing HTTP/2.
@@ -21,7 +23,7 @@ Most users of this library will be implementing HTTP/2.
 
 The `Decode` function expects a complete header block. HTTP/2 specifies that a header block can be split across multiple frames, in a **HEADER** or **PUSH_PROMISE** frame plus optional **CONTINUATION** frames.
 
-Users should concatenate the header block fragments together and only call `ParseHeadersBlock` when a frame with the **END_HEADERS** flag is received.
+Users should concatenate the header block fragments together and only call `Decode` when a frame with the **END_HEADERS** flag is received.
 
 ## Development
 
